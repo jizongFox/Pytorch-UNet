@@ -13,6 +13,7 @@ from eval import eval_net
 from unet import UNet
 from utils import get_ids, split_ids, split_train_val, get_imgs_and_masks, batch
 
+
 def train_net(net,
               epochs=5,
               batch_size=1,
@@ -21,7 +22,6 @@ def train_net(net,
               save_cp=True,
               gpu=False,
               img_scale=0.5):
-
     dir_img = 'data/train/'
     dir_mask = 'data/train_masks/'
     dir_checkpoint = 'checkpoints/'
@@ -99,7 +99,6 @@ def train_net(net,
             print('Checkpoint {} saved !'.format(epoch + 1))
 
 
-
 def get_args():
     parser = OptionParser()
     parser.add_option('-e', '--epochs', dest='epochs', default=5, type='int',
@@ -117,6 +116,7 @@ def get_args():
 
     (options, args) = parser.parse_args()
     return options
+
 
 if __name__ == '__main__':
     args = get_args()
